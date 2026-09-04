@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matthew 的個人網站</title>
+    <title>專業服務諮詢與解決方案</title>
     <style>
         * {
             box-sizing: border-box;
@@ -13,102 +13,169 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
-            color: #e0e0e0;
-            background-color: #0f172a;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            color: #333333;
+            background-color: #f8fafc;
         }
-        .container {
-            max-width: 650px;
-            width: 100%;
-            background: #1e293b;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            border: 1px solid #334155;
+        /* Header / Hero */
+        .hero {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 80px 20px;
         }
-        h1 {
-            color: #38bdf8;
-            font-size: 2rem;
-            margin-bottom: 8px;
-        }
-        .subtitle {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            margin-bottom: 24px;
-        }
-        hr {
-            border: none;
-            border-top: 1px solid #334155;
-            margin: 20px 0;
-        }
-        h2 {
-            color: #f1f5f9;
-            font-size: 1.3rem;
-            margin-bottom: 12px;
-        }
-        p {
+        .hero h1 {
+            font-size: 2.5rem;
             margin-bottom: 16px;
-            color: #cbd5e1;
+            color: #38bdf8;
         }
-        .tags {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 24px;
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            color: #94a3b8;
         }
-        .tag {
-            background: #0284c7;
-            color: #fff;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-        .btn {
+        .cta-btn {
             display: inline-block;
-            background: #38bdf8;
-            color: #0f172a;
-            padding: 10px 20px;
+            background: #0284c7;
+            color: #ffffff;
+            padding: 12px 30px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            transition: background 0.2s;
+            font-size: 1.1rem;
+            transition: background 0.3s;
         }
-        .btn:hover {
-            background: #7dd3fc;
+        .cta-btn:hover {
+            background: #0369a1;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            color: #0f172a;
+        }
+
+        /* Service Cards Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            color: #0284c7;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .card p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact-box {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .btn-email {
+            background: #64748b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #94a3b8;
+            font-size: 0.85rem;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>👋 你好，我是 Matthew！</h1>
-        <p class="subtitle">Never give up on your dream</p>
+    <!-- 頁頭 / 主標題區 -->
+    <header class="hero">
+        <h1>專業服務與解決方案</h1>
+        <p>為你提供高效率、高品質嘅專業諮詢與客製化服務</p>
+        <a href="#contact" class="cta-btn">立即預約諮詢</a>
+    </header>
 
-        <div class="tags">
-            <span class="tag">HTML/CSS</span>
-            <span class="tag">GitHub Pages</span>
-            <span class="tag">個人網站</span>
+    <div class="container">
+        <!-- 服務項目 -->
+        <h2 class="section-title">我們的服務內容</h2>
+        <div class="services-grid">
+            <div class="card">
+                <h3>💼 服務項目一</h3>
+                <p>簡單介紹你提供嘅第一項服務內容，例如：顧問諮詢、網頁設計或資料分析。</p>
+            </div>
+            <div class="card">
+                <h3>⚡ 服務項目二</h3>
+                <p>簡單介紹你提供嘅第二項服務內容，強調服務效率與特色。</p>
+            </div>
+            <div class="card">
+                <h3>🎯 服務項目三</h3>
+                <p>簡單介紹你提供嘅第三項服務內容，解決客戶嘅核心痛點。</p>
+            </div>
         </div>
 
-        <hr>
-
-        <h2>關於我</h2>
-        <p>歡迎來到我的第一個 GitHub 個人網站！我正在學習網頁前端開發同 Git/GitHub 的應用。</p>
-
-        <h2>我的目標</h2>
-        <p>建立一個簡約、實用又好看的個人作品集與網誌。</p>
-
-        <hr>
-
-        <h2>聯絡我</h2>
-        <p>如果你對我的項目感興趣，歡迎透過 GitHub 關注我：</p>
-        <a href="https://github.com/matthew1682001" class="btn" target="_blank">造訪我的 GitHub Profile</a>
+        <!-- 聯絡我們區塊 -->
+        <div id="contact" class="contact-box">
+            <h2>預約諮詢 / 聯絡我們</h2>
+            <p style="margin-top: 10px; color: #64748b;">歡迎隨時透過以下方式聯絡我，我會盡快回覆你！</p>
+            
+            <div class="contact-links">
+                <!-- 替換成你嘅 WhatsApp 號碼 (例如 85212345678) -->
+                <a href="https://wa.me/85212345678" class="btn-whatsapp" target="_blank">📱 WhatsApp 聯絡</a>
+                <!-- 替換成你嘅 Email -->
+                <a href="mailto:your-email@example.com" class="btn-email">✉️ 電郵查詢</a>
+            </div>
+        </div>
     </div>
+
+    <footer>
+        &copy; 2026 專業服務團隊. All rights reserved.
+    </footer>
 
 </body>
 </html>
