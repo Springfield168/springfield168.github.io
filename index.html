@@ -179,6 +179,47 @@
             font-weight: bold;
         }
 
+        /* 🆕 ==================== API 區塊專用 CSS 樣式 ==================== */
+        .api-box {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 60px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        .btn-api {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+        .btn-api:hover {
+            background: #0284c7;
+        }
+        .api-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .api-list li {
+            background: #f1f5f9;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            color: #334155;
+            border-left: 4px solid #0284c7;
+        }
+        /* ================================================================= */
+
         /* Footer */
         footer {
             text-align: center;
@@ -197,6 +238,7 @@
             <ul class="nav-menu">
                 <li><a href="#about">關於我們</a></li>
                 <li><a href="#services">服務項目</a></li>
+                <li><a href="#api-section">Python API 報價</a></li>
                 <li><a href="#contact">聯絡我們</a></li>
             </ul>
         </div>
@@ -234,6 +276,18 @@
             </div>
         </section>
 
+        <!-- 🆕 ==================== 新增：Python API 實時計算區塊 ==================== -->
+        <section id="api-section" class="api-box">
+            <h2 style="color: #0f172a; font-size: 1.5rem;">🔥 即時服務優惠試算 (Python FastAPI 連動)</h2>
+            <p style="color: #64748b; margin-top: 8px;">點擊下方按鈕，向 Render 伺服器讀取由 Python 實時算出的最新優惠價格：</p>
+            
+            <button class="btn-api" onclick="loadServices()">讀取 Python API 數據</button>
+
+            <!-- 數據會顯示在這裡 -->
+            <ul id="services-list" class="api-list"></ul>
+        </section>
+        <!-- ======================================================================== -->
+
         <!-- 聯絡我們區塊 -->
         <section id="contact" class="contact-box">
             <h2>預約諮詢 / 聯絡我們</h2>
@@ -249,6 +303,33 @@
     <footer>
         &copy; 2026 Springfield. All rights reserved.
     </footer>
+
+    <!-- 🆕 ==================== 新增：JavaScript 呼叫 API 腳本 ==================== -->
+    <script>
+        function loadServices() {
+            // 指向你的 Render Python API 專屬網址
+            const apiUrl = 'https://springfield-api.onrender.com/api/services';
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const listElement = document.getElementById('services-list');
+                    listElement.innerHTML = ''; // 清空舊內容
+
+                    // 將 Python 回傳的 List 數據轉為 HTML 顯示
+                    data.services.forEach(item => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `<strong>${item.name}</strong> — 原價: HK$${item.price.toLocaleString()} | <span style="color: #0284c7; font-weight: bold;">優惠價: HK$${item.discount_price.toLocaleString()}</span>`;
+                        listElement.appendChild(li);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching API:', error);
+                    alert('讀取 API 失敗，請確認 Render 伺服器是否正常運作。');
+                });
+        }
+    </script>
+    <!-- ======================================================================== -->
 
 </body>
 </html>
