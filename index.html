@@ -319,8 +319,7 @@
                     // 將 Python 回傳的 List 數據轉為 HTML 顯示
                     data.services.forEach(item => {
                         const li = document.createElement('li');
-                        li.innerHTML = `<strong>${item.name}</strong> — 原價: HK$${item.price.toLocaleString()} | <span style="color: #0284c7; font-weight: bold;">優惠價: HK$${item.discount_price.toLocaleString()}</span>`;
-                        listElement.appendChild(li);
+                  li.innerHTML = `<strong>${item.name}</strong> — 原價: HK$${item.price.toLocaleString()} | <strong>優惠價: HK$${item.discount_price.toLocaleString()}</strong><br><small style="color: #666;">${item.description}</small>`;
                     });
                 })
                 .catch(error => {
