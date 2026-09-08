@@ -321,13 +321,16 @@
                         const li = document.createElement('li');
                     
                     const desc = item.description ? `<br><small style="color: #64748b;">${item.description}</small>` : '';
-                                ${durationHtml}
+
+                     const durationHtml = item.duration ? `<br><small style="color: #4a5568;">⏱️ 處理時間：<strong>${item.duration}</strong></small>` : '';
+                        
                         const durationHtml = item.duration ? `<p style="font-size: 0.85rem; color: #4a5568; margin-top: 8px;">⏱️ 處理時間：<strong>${item.duration}</strong></p>` : '';
 
           <!-- 🟡 [修改] 在卡片 HTML 結構中放入 ${durationHtml} -->
                 
-                li.innerHTML = `<strong>${item.name}</strong> — 原價: HK$${item.price.toLocaleString()} | <span style="color: #0284c7; font-weight: bold;">優惠價: HK$${item.discount_price.toLocaleString()}</span>${desc}`;
-                listElement.appendChild(li);
+                li.innerHTML = `<strong>${item.name}</strong> — 原價: HK$${item.price.toLocaleString()} | <span style="color: #0284c7; font-weight: bold;">優惠價: HK$${item.discount_price.toLocaleString()}</span>${desc}${durationHtml}`;
+                
+                    listElement.appendChild(li);
 
                         
 
