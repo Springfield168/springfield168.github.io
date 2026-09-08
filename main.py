@@ -23,18 +23,21 @@ def get_services():
           "name": "合規與風險控制諮詢",
           "price": 10000,
           "description": "SFC 合規架構搭建與風險評估。",
+          "duration": "3 個工作天"
       },
       {
           "id": 2,
           "name": "AML 反洗錢系統評估",
           "price": 15000,
-          "description": "評估與部署 iFinGate 等專業 AML 系統。",
+          "description": "評估與部署專業 AML 系統。",
+          "duration": "7 個工作天"
       },
       {
           "id": 3,
           "name": "虛擬資產牌照通知服務",
           "price": 20000,
           "description": "虛擬資產交易服務監管申報與業務計劃。",
+          "duration": "14 個工作天"
       },
   ]
 
